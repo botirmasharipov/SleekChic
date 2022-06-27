@@ -1,10 +1,10 @@
-class itemsController{
+class ItemsController{
     
   items; 
   currentId;
 
 
-constructor(currentId = 1){
+constructor(currentId = 0){
     
     this.currentId = currentId;
     this.items = [];
@@ -21,10 +21,20 @@ constructor(currentId = 1){
          // Push the item to the items property
          this.items.push(item);
         }
+        loadItemsFromLocalStorage() {
+            const storageItems = localStorage.getItem("items")
+            if (storageItems) {
+                const items = JSON.parse(storageItems)
+                for (let i = 0; i< items.length; i++) {
+                    const item = items[i];
+                    this.items.push(item);
+                }
+            }
+        }
     }
 
 
-const itemobj = new itemsController();
+const itemobj = new ItemsController();
 itemobj.addItem("Cordigan","Red Color","cordiganImage.jpg");
 itemobj.addItem("Pant","Blue Color","pantImage.jpg");
 itemobj.addItem("Floral Dress","Multi Color","floralImage.jpg");

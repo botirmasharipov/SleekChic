@@ -1,4 +1,4 @@
-//const itemsController = new ItemsController(0);
+const itemsController = new ItemsController(0);
 
 // Select the New Item Form
 const newItemForm = document.querySelector("#newItemForm");
@@ -19,7 +19,7 @@ newItemForm.addEventListener("submit", (event) => {
   if (name && description && imageUrl && price) {
     console.log(name + description + imageUrl + price);
     // Add the item to the ItemsController
-    //  itemsController.addItem(name, description,price,imageUrl);
+    itemsController.addItem(name, description,price,imageUrl);
     //clear the form
     newItemName.value = "";
     newItemDescription.value = "";
