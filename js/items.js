@@ -15,6 +15,7 @@ const itemsController = new ItemsController(0);
     itemsContainer.innerHTML += itemHTML;
 }*/
 
+//Adding sample items to local storage
 function loadStorageSampleData(){
     if(!localStorage.getItem("items")){
         const sampleItems = [{'name':'juice',
@@ -27,6 +28,7 @@ function loadStorageSampleData(){
     }
 }
 
+//Function for loading all the items from itemscontroller and adding it to html structure
 function loadCardsListFromItemsController(){
     for(let i = 0; i<itemsController.items.length; i++){
         const item = itemsController.items[i];

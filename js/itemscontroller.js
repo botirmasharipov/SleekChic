@@ -21,6 +21,7 @@ constructor(currentId = 0){
          // Push the item to the items property
          this.items.push(item);
         }
+        //Loading sample items from local storage and pushing it to items object
         loadItemsFromLocalStorage() {
             const storageItems = localStorage.getItem("items")
             if (storageItems) {
