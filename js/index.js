@@ -24,8 +24,26 @@ const initialCards = [
     link: "https://i5.walmartimages.com/asr/6b997d86-c29d-4bcf-b044-14cabcc39168.f71cfdf11a8001f33152a46fcc1801c0.jpeg",
   },
 ];
+loadInitialItems();
+function createCard(item) {
+  const elements = document.querySelector("#elements").content;
+  const element = elements.querySelector(".element").cloneNode(true);
+  console.log("Image URL:" + item.imageUrl);
+  console.log("Name:" + item.name);
+  element.querySelector(".element__image").src = item.imageUrl;
+  element.querySelector(".element__text").textContent = item.name;
 
-function createCard(data) {
+  return element;
+}
+
+const elementsList = document.querySelector(".elements__list");
+itemsController.items.forEach((item) => {
+  console.log("Before adding createCard");
+  elementsList.prepend(createCard(item));
+});
+
+
+/* function createCard(data) {
   const elements = document.querySelector("#elements").content;
   const element = elements.querySelector(".element").cloneNode(true);
   element.querySelector(".element__image").src = data.link;
@@ -38,3 +56,4 @@ const elementsList = document.querySelector(".elements__list");
 initialCards.forEach((card) => {
   elementsList.prepend(createCard(card));
 });
+*/
