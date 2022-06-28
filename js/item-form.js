@@ -19,7 +19,7 @@ newItemForm.addEventListener("submit", (event) => {
   if (name && description && imageUrl && price) {
     console.log(name + description + imageUrl + price);
     // Add the item to the ItemsController
-    //  itemsController.addItem(name, description,price,imageUrl);
+    itemsController.addItem(name, description,price,imageUrl);
     //clear the form
     newItemName.value = "";
     newItemDescription.value = "";
@@ -28,9 +28,8 @@ newItemForm.addEventListener("submit", (event) => {
 
     //displaying the Product details
     newItemForm.style.display = "none";
-    document.querySelector(".newproduct").style.display = "block";
-    const newitemDisplay = document.querySelector("#productdisplay");
-    newitemDisplay.innerHTML = `<h1>New Product added</h1> <br> Produt Name: ${name}<br> Description: ${description}<br>
-           Image URL: ${imageUrl} <br> Price: ${price}`;
+    //document.querySelector(".newproduct").style.display = "block";
+    document.getElementById("list-items").innerHTML="";
+    loadCardsListFromItemsController();       
   }
 });
