@@ -26,12 +26,12 @@ function addItemCard(item){
      console.log('3rd item');
      itemsController.addItem("Skirt","Black","$28","https://m.media-amazon.com/images/I/71+RuNnhrxL._AC_UY445_.jpg");
      console.log('4th item');
-     itemsController.addItem("Pants","Black-Printed","$25","https://www.lulus.com/images/product/xlarge/8438101_1724476.jpg?w=560");
+     itemsController.addItem("Pants","Pink","$32","https://www.lulus.com/images/product/xlarge/8438101_1724476.jpg?w=560");
      console.log('5th item');
-     itemsController.addItem("Glasses","Black-Printed","$25","https://i5.walmartimages.com/asr/6b997d86-c29d-4bcf-b044-14cabcc39168.f71cfdf11a8001f33152a46fcc1801c0.jpeg");
+     itemsController.addItem("Glasses","Polarized","$148","https://i5.walmartimages.com/asr/6b997d86-c29d-4bcf-b044-14cabcc39168.f71cfdf11a8001f33152a46fcc1801c0.jpeg");
      console.log('6th item');
      
-     
+     localStorage.setItem("items", JSON.stringify(itemsController.items));
 
  } 
 function loadCardsListFromItemsController(){
@@ -44,6 +44,17 @@ function loadCardsListFromItemsController(){
   
   document.querySelector("#list-items").style.display="block";
 }
+function loadCardsListFromLocalStorage(){
+
+  const storageItems = localStorage.getItem("items");
+   if(!storageItems)
+   {
+     console.log("First time Access.. No Local storage and hence adding");
+     loadInitialItems();
+ 
+   }
+}
+
 function enableForm()
 {
     document.querySelector(".product-pop").style.display="block";

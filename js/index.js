@@ -2,7 +2,7 @@ const initialCards = [
   {
     name: "Dress",
     link: "https://img.promgirl.com/_img/PGPRODUCTS/2409999/320/black-dress-PG-22-B2284-a.jpg",
-  },
+    },
   {
     name: "Jeans",
     link: "https://valentino-cdn.thron.com/delivery/public/image/valentino/b75b2f41-080d-40b7-a412-d39b809ffcc3/ihqstx/std/2000x0/BLUE-WASHED-DENIM-JEANS-WITH-VALENTINO-ARCHIVE-1985-PRINT?quality=80&size=35&format=auto",
@@ -24,7 +24,7 @@ const initialCards = [
     link: "https://i5.walmartimages.com/asr/6b997d86-c29d-4bcf-b044-14cabcc39168.f71cfdf11a8001f33152a46fcc1801c0.jpeg",
   },
 ];
-loadInitialItems();
+loadCardsListFromLocalStorage();
 function createCard(item) {
   const elements = document.querySelector("#elements").content;
   const element = elements.querySelector(".element").cloneNode(true);
@@ -32,12 +32,16 @@ function createCard(item) {
   console.log("Name:" + item.name);
   element.querySelector(".element__image").src = item.imageUrl;
   element.querySelector(".element__text").textContent = item.name;
+  element.querySelector(".element__description").innerText = item.description;
+  element.querySelector(".element__price").textContent = item.price;
 
   return element;
 }
 
 const elementsList = document.querySelector(".elements__list");
-itemsController.items.forEach((item) => {
+const itemsFromStorage = localStorage.getItem("items");
+const items = JSON.parse(itemsFromStorage);
+items.forEach((item) => {
   console.log("Before adding createCard");
   elementsList.prepend(createCard(item));
 });
