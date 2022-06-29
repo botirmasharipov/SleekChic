@@ -26,7 +26,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 25px auto 31px;
+  margin: 25px auto 5px;
   max-width: 80%;
 }
 
@@ -45,6 +45,15 @@
 .elements {
   max-width: 880px;
   margin: 20px auto 67px;
+}
+.element_des {
+  color:red;
+  font-style: italic;
+  font-weight: 500;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
 }
 
 @media only screen and (max-width: 890px) {
