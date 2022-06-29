@@ -1,4 +1,4 @@
-//const itemsController = new ItemsController(0);
+const itemsController = new ItemsController();
 
 // Select the New Item Form
 const newItemForm = document.querySelector("#newItemForm");
@@ -28,8 +28,17 @@ newItemForm.addEventListener("submit", (event) => {
 
     //displaying the Product details
     newItemForm.style.display = "none";
-    //document.querySelector(".newproduct").style.display = "block";
-    document.getElementById("list-items").innerHTML="";
-    loadCardsListFromItemsController();       
+    document.querySelector(".newproduct").style.display = "block";
+    document.getElementById("list-items").innerHTML=`<div class="card" style="width: 20rem;">
+    <img src="${imageUrl}" width="300" height="250"  alt="product image">
+    <div class="card-body">
+    <h5 class="card-title">Name:${name}</h5>
+    <p class="card-text">Description:${description}</p></br>
+    <p class="card-text">Price:$${price}</p>
+    <a href="item_form.html" class="btn btn-primary">Add New Item</a>
+    </div>
+    </div>
+    </br>`;
+    
   }
 });
