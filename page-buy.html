@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="card.css" />
   </head>
   <body>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <link rel="">
     <!-- Site Header -->
 
     <header class="navbar">
@@ -62,14 +67,33 @@
         <ul class="elements__list"></ul>
       </section>
 
+
+
+     <!-- <div class="card" style="width: 18rem;">
+    <img src = "https://img.promgirl.com/_img/PGPRODUCTS/2409999/320/black-dress-PG-22-B2284-a.jpg",
+     class="card-img-top" alt="dress">
+        <div class="card-body">
+          <p class="card-text">Black Evening gown</p>
+          <img src = "https://img.promgirl.com/_img/PGPRODUCTS/2409999/320/black-dress-PG-22-B2284-a.jpg",
+          class="card-img-top" alt="dress">
+             <div class="card-body">
+               <p class="card-text">Black Evening gown</p>
+
+        </div>
+      </div>-->
+
       <template id="elements">
         <li class="element">
           <img class="element__image" />
           <div class="element__flex">
             <h2 class="element__text"></h2>
+            <h5 class="element__description"></h5>
+            <h6 class="element__price"></h6>
           </div>
         </li>
       </template>
+
+      
       <!-- Main Content Benefits -->
       <section role="region" class="main-content-benefits">
         <div class="container">
@@ -151,6 +175,10 @@
         </ul>
       </nav>
     </footer>
-    <script src="./js/index.js"></script>
+    <script src="js/ItemsController.js"></script>
+    <script src="js/items.js"></script>
+    <script src="js/index.js"></script>
+    
+
   </body>
 </html>

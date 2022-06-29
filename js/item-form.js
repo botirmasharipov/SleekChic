@@ -3,6 +3,8 @@
 // Select the New Item Form
 const newItemForm = document.querySelector("#newItemForm");
 // Add an 'onsubmit' event listener
+
+
 newItemForm.addEventListener("submit", (event) => {
   event.preventDefault();
   // Select the inputs
