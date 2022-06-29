@@ -29,8 +29,8 @@ newItemForm.addEventListener("submit", (event) => {
     //displaying the Product details
     newItemForm.style.display = "none";
     document.querySelector(".newproduct").style.display = "block";
-    document.getElementById("list-items").innerHTML=`<div class="card" style="width: 20rem;">
-    <img src="${imageUrl}" width="300" height="250"  alt="product image">
+    document.getElementById("list-items").innerHTML=`<div class="card bg-success bg-opacity-75" style="width: 18rem;">
+    <img src="${imageUrl}" width="285" height="250"  alt="product image">
     <div class="card-body">
     <h5 class="card-title">Name:${name}</h5>
     <p class="card-text">Description:${description}</p></br>
