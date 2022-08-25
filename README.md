@@ -2,7 +2,7 @@
 
 ## Technologies 
 
-- HTML,CSS,Bootstrap,JavaScript and LocalStorage. 
+- HTML, CSS, Bootstrap, JavaScript, and LocalStorage. 
 
 ## Features 
 
